@@ -18,10 +18,14 @@ public class RegistroController {
 
     public void run() {
         int option;
-        do {
-            option = mostrarMenu();
-            procesarOpcion(option);
-        } while (option != 0);
+        try {
+            do {
+                option = mostrarMenu();
+                procesarOpcion(option);
+            } while (option != 0);
+        } finally {
+            view.close();
+        }
     }
 
     private int mostrarMenu() {

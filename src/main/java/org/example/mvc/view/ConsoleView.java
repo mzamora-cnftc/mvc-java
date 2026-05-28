@@ -58,4 +58,8 @@ public class ConsoleView {
             printLine("Entrada inválida. No puede estar vacía.");
         }
     }
+
+    public void close() {
+        scanner.close();
+    }
 }

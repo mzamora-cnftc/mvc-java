@@ -11,6 +11,12 @@ public class ListRegistroRepository implements RegistroRepository {
 
     @Override
     public void save(Registro registro) {
+        for (int i = 0; i < registros.size(); i++) {
+            if (registros.get(i).getId() == registro.getId()) {
+                registros.set(i, registro);
+                return;
+            }
+        }
         registros.add(registro);
     }
 
